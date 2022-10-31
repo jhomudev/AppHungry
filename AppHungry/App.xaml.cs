@@ -12,7 +12,7 @@ namespace AppHungry
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new MainPage());
+            MainPage = new NavigationPage(new Presentacion());
         }
 
         protected override void OnStart()

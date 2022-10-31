@@ -69,6 +69,7 @@ namespace AppHungry.View
 
         private void EnabledEntries()
         {
+            FoodName.InputTransparent = false;
             FoodGenero.InputTransparent = false;
             FoodPrecio.InputTransparent = false;
             FoodImageLink.InputTransparent = false;
@@ -80,6 +81,7 @@ namespace AppHungry.View
         private void DisabledEntries()
         {
             FoodGenero.InputTransparent = true;
+            FoodName.InputTransparent = true;
             FoodPrecio.InputTransparent = true;
             FoodImageLink.InputTransparent = true;
             FoodGeneroLabel.HeightRequest = 30;
