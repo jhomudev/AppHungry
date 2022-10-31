@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppHungry.View.Plato">
+    <Grid RowDefinitions="auto,auto,auto,auto,*,40"
+          VerticalOptions="FillAndExpand"
+          BackgroundColor="White"
+          Padding="30">
+        <StackLayout Orientation="Horizontal" HorizontalOptions="End">
+            <ImageButton Source="iconEdit.png"
+                         WidthRequest="40"
+                         Padding="7"
+                         CornerRadius="5"
+                         BackgroundColor="#159A9C"
+                         x:Name="TopButtonedit"
+                         Clicked="TopButtonedit_Clicked"/>
+            <ImageButton Source="iconDelete.png"
+                         WidthRequest="40"
+                         Padding="7"
+                         CornerRadius="5"
+                         BackgroundColor="#9E0B28"
+                         x:Name="TopButtondelete"
+                         Clicked="TopButtondelete_Clicked"/>
+        </StackLayout>
+        <StackLayout Grid.Row="1">
+            <Entry Placeholder="Escriba el nombre del plato"
+                   PlaceholderColor="LightGray"
+                   Text=""
+                   TextColor="#002333"
+                   HorizontalTextAlignment="Center"
+                   FontSize="Title"
+                   TextTransform="Uppercase"
+                   FontAttributes="Bold"
+                   x:Name="FoodName" />
+            <Image Source=""
+                   x:Name="_image"
+                   Margin="0,20" />
+        </StackLayout>
+        <StackLayout HorizontalOptions="StartAndExpand"
+                     Grid.Row="2">
+            <Label Text="Tipo de plato:"
+                   TextColor="Black"
+                   VerticalOptions="CenterAndExpand"
+                   HorizontalTextAlignment="Start"
+                   FontAttributes="Bold"
+                   FontSize="Medium" />
+            <Picker Grid.Row="4"
+                    HeightRequest="0"
+                    Title="Seleccione el tipo de plato"
+                    TextColor="Gray"
+                    FontSize="Subtitle"
+                    SelectedIndexChanged="FoodGenero_SelectedIndexChanged"
+                    x:Name="FoodGenero">
+                <Picker.Items>
+                    <x:String>Sopa</x:String>
+                    <x:String>Segundo</x:String>
+                    <x:String>Postre</x:String>
+                    <x:String>Comida rápida</x:String>
+                </Picker.Items>
+            </Picker>
+            <Label Text=""
+                   x:Name="FoodGeneroLabel"
+                   TextColor="#1F3266"
+                   FontSize="Body"/>
+        </StackLayout>
+        <StackLayout HorizontalOptions="FillAndExpand"
+                     Grid.Row="3">
+            <Label Text="Imagen:"
+                   TextColor="Black"
+                   VerticalOptions="CenterAndExpand"
+                   HorizontalTextAlignment="Start"
+                   FontAttributes="Bold"
+                   FontSize="Medium" />
+            <Entry Text=""
+                   TextColor="#1F3266"
+                   WidthRequest="250"
+                   FontSize="Small"
+                   HorizontalOptions="FillAndExpand"
+                   HorizontalTextAlignment="Start"
+                   x:Name="FoodImageLink" />
+        </StackLayout>
+        <StackLayout HorizontalOptions="FillAndExpand"
+                     Grid.Row="4">
+            <Label Text="Precio: S/"
+                   TextColor="Black"
+                   HorizontalTextAlignment="Start"
+                   FontAttributes="Bold"
+                   FontSize="Medium" />
+            <Entry Text=""
+                   TextColor="#1F3266"
+                   HorizontalOptions="FillAndExpand"
+                   HorizontalTextAlignment="Start"
+                   FontAttributes="Bold"
+                   x:Name="FoodPrecio" />
+        </StackLayout>
+
+        <Button Grid.Row="5"
+                Text="guardar cambios"
+                TextColor="White"
+                WidthRequest="120"
+                Background="#1F3266"
+                CornerRadius="10"
+                x:Name="SaveButton"
+                Clicked="SaveButton_Clicked" />
+
+    </Grid>
+</ContentPage>

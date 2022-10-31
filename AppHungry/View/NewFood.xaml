@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppHungry.View.NewFood">
+    <StackLayout Padding="30,60"
+                 BackgroundColor="#DEEFE7">
+        <StackLayout VerticalOptions="CenterAndExpand"
+                     Spacing="10">
+            <Label Text="Nuevo Plato"
+                   TextColor="Black"
+                   HorizontalTextAlignment="Center"
+                   FontSize="Title"
+                   FontAttributes="Bold"
+                   Margin="0,20" />
+            <Frame Padding="10,0"
+                   Background="#DBE6EB"
+                   CornerRadius="5">
+                <Entry Placeholder="Nombre del Plato"
+                       PlaceholderColor="#B4BEC9"
+                       TextColor="#159A9C"
+                       FontSize="Medium"
+                       x:Name="FoodName" />
+            </Frame>
+            <Frame Padding="10,0"
+                   Background="#DBE6EB"
+                   CornerRadius="5">
+                <Picker Title="Seleccione el tipo de plato"
+                        TitleColor="#B4BEC9"
+                        SelectedIndexChanged="FoodGenero_SelectedIndexChanged"
+                        x:Name="FoodGenero">
+                    <Picker.Items>
+                        <x:String>Sopa</x:String>
+                        <x:String>Segundo</x:String>
+                        <x:String>Postre</x:String>
+                        <x:String>Comida rápida</x:String>
+                    </Picker.Items>
+                </Picker>
+            </Frame>
+            <Frame Padding="10,0"
+                   Background="#DBE6EB"
+                   CornerRadius="5">
+                <Entry Placeholder="Link de la imagen"
+                       PlaceholderColor="#B4BEC9"
+                       TextColor="#159A9C"
+                       FontSize="Medium"
+                       x:Name="FoodImageLink" />
+            </Frame>
+            <Frame Padding="10,0"
+                   Background="#DBE6EB"
+                   CornerRadius="5"
+                   Margin="0,0,0,20">
+                <Entry Placeholder="Escriba el precio"
+                       PlaceholderColor="#B4BEC9"
+                       TextColor="#159A9C"
+                       Keyboard="Numeric"
+                       x:Name="FoodPrecio" />
+            </Frame>
+            <Button Text="Agregar"
+                    TextColor="White"
+                    CornerRadius="10"
+                    Background="#002333"
+                    x:Name="AddBtn"
+                    Clicked="AddBtn_Clicked" />
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

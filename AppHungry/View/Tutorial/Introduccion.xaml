@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:View="clr-namespace:AppHungry.View.Tutorial"
+             x:Class="AppHungry.View.Tutorial.Introduccion"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Background>
+        <LinearGradientBrush EndPoint="1,1">
+            <GradientStop Color="#159A9C"
+                          Offset="0.1" />
+            <GradientStop Color="#002333"
+                          Offset="0.9" />
+        </LinearGradientBrush>
+    </ContentPage.Background>
+    <Grid RowDefinitions="100,*,50"
+          VerticalOptions="FillAndExpand">
+        <Button Grid.Row="0"
+                Text="saltar"
+                TextColor="White"
+                BackgroundColor="Transparent"
+                CornerRadius="30"
+                HorizontalOptions="End"
+                FontSize="Medium"
+                Margin="30,0"
+                x:Name="SaltarBtn"
+                Clicked="SaltarBtn_Clicked" />
+        <CarouselView Grid.Row="1"
+                      IndicatorView="Indicador">
+            <CarouselView.ItemsSource>
+                <x:Array Type="{x:Type ContentView}">
+                    <View:View1 />
+                    <View:View2 />
+                    <View:View3 />
+                </x:Array>
+            </CarouselView.ItemsSource>
+            <CarouselView.ItemTemplate>
+                <DataTemplate>
+                    <ContentView Content="{Binding}" />
+                </DataTemplate>
+            </CarouselView.ItemTemplate>
+        </CarouselView>
+        <IndicatorView Grid.Row="2"
+                       IndicatorColor="White"
+                       SelectedIndicatorColor="#159A9C"
+                       x:Name="Indicador" />
+    </Grid>
+</ContentPage>

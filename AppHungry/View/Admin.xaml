@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppHungry.View.Admin">
+    <StackLayout Background="#DEEFE7"
+                 Padding="20"
+                 Spacing="20">
+        <FlexLayout FlowDirection="LeftToRight"
+                    JustifyContent="SpaceBetween">
+            <Label Text="Más populares"
+                   TextColor="#002333"
+                   FontSize="Medium"
+                   FontAttributes="Bold"
+                   VerticalTextAlignment="Center" />
+            <Button Text="Añadir"
+                    TextColor="White"
+                    BackgroundColor="#002333"
+                    CornerRadius="10"
+                    HorizontalOptions="Center"
+                    x:Name="Addbtn"
+                    Clicked="Addbtn_Clicked" />
+        </FlexLayout>
+        <StackLayout>
+            <ListView x:Name="Platos"
+                      ItemTapped="Platos_ItemTapped"
+                      IsPullToRefreshEnabled="True"
+                      RowHeight="100">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal"
+                                         VerticalOptions="FillAndExpand"
+                                         HorizontalOptions="FillAndExpand"
+                                         Spacing="15">
+                                <Image Source="{Binding LinkImage}"
+                                       HorizontalOptions="Center"
+                                       Aspect="Fill"
+                                       WidthRequest="150"
+                                       HeightRequest="100" />
+                                <StackLayout Spacing="0">
+                                    <Label Text="{Binding Nombre}"
+                                           TextColor="#002333"
+                                           FontSize="Medium"
+                                           TextTransform="Uppercase"
+                                           FontAttributes="Bold"
+                                           HorizontalOptions="FillAndExpand" />
+                                    <Label Text="{Binding Genero}"
+                                           TextColor="Black"
+                                           FontSize="Small"
+                                           FontAttributes="Bold"
+                                           HorizontalOptions="FillAndExpand" />
+                                    <Label Text="{Binding Precio}"
+                                           TextColor="#159A9C"
+                                           FontSize="Title"
+                                           FontAttributes="Bold"
+                                           HorizontalOptions="FillAndExpand" />
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

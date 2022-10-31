@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppHungry.View.Presentacion"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Background>
+        <LinearGradientBrush EndPoint="1,1">
+            <GradientStop Color="#159A9C"
+                          Offset="0.1" />
+            <GradientStop Color="#002333"
+                          Offset="0.9" />
+        </LinearGradientBrush>
+    </ContentPage.Background>
+    <StackLayout VerticalOptions="CenterAndExpand">
+        <Label Text="AppHungry"
+               HorizontalTextAlignment="Center"
+               Margin="0,50,0,0"
+               FontSize="Title"
+               FontAttributes="Bold"
+               TextColor="white" />
+        <Image Source="iconAppHungry.png"
+               HeightRequest="250"
+               Margin="20"
+               x:Name="iconApp" />
+        <Label Text="Xamarin Forms"
+               FontSize="Medium"
+               HorizontalTextAlignment="Center"
+               FontAttributes="Bold"
+               TextColor="White" />
+        <Label Text="Mi Nombre"
+               FontSize="Medium"
+               HorizontalTextAlignment="Center"
+               FontAttributes="Bold,Italic"
+               TextColor="White" />
+
+    </StackLayout>
+</ContentPage>

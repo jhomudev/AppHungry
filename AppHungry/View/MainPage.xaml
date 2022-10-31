@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<FlyoutPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:View="clr-namespace:AppHungry.View"
+             x:Class="AppHungry.MainPage"
+             NavigationPage.HasNavigationBar="False">
+    <FlyoutPage.Flyout>
+        <View:Menu x:Name="FlyoutMenu" />
+    </FlyoutPage.Flyout>
+
+    <FlyoutPage.Detail>
+        <NavigationPage>
+            <x:Arguments>
+                <View:Admin />
+            </x:Arguments>
+        </NavigationPage>
+    </FlyoutPage.Detail>
+
+
+</FlyoutPage>

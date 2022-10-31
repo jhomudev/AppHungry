@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppHungry.View.Menu"
+             xmlns:Model="clr-namespace:AppHungry.Model"
+             xmlns:View="clr-namespace:AppHungry.View"
+             Title="FlyuotMenu">
+    <StackLayout BackgroundColor="#DEEFE7">
+        <StackLayout Orientation="Horizontal"
+                     Padding="20,20,20,10"
+                     HorizontalOptions="CenterAndExpand">
+            <Image Source="iconAppHungry.png"
+                   WidthRequest="60" />
+            <Label VerticalOptions="Center"
+                   Text="AppHungry"
+                   TextColor="#159A9C"
+                   FontAttributes="Bold"
+                   FontSize="Large"
+                   Margin="0,0,0,15" />
+        </StackLayout>
+        <BoxView HorizontalOptions="FillAndExpand"
+                 HeightRequest="1"
+                 Color="#002333"
+                 Margin="0,0,0,20" />
+        <ListView HasUnevenRows="True"
+                  x:Name="listview"
+                  x:FieldModifier="public">
+            <ListView.ItemsSource>
+                <x:Array Type="{x:Type Model:ItemMenu}">
+                    <Model:ItemMenu Title="Home"
+                                    IconSource="home.png"
+                                    TargetPage="{x:Type View:Admin}" />
+                    <Model:ItemMenu Title="Admin"
+                                    IconSource="admin.png"
+                                    TargetPage="{x:Type View:Admin}" />
+                    <Model:ItemMenu Title="Salir"
+                                    IconSource="logout.png" />
+                </x:Array>
+            </ListView.ItemsSource>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Padding="20,0">
+                            <Grid ColumnDefinitions="50,*"
+                                  VerticalOptions="CenterAndExpand">
+                                <Image Grid.Column="0"
+                                       Margin="0,15"
+                                       HeightRequest="30"
+                                       Source="{Binding IconSource}" />
+                                <Label Grid.Column="1"
+                                       VerticalTextAlignment="Center"
+                                       Text="{Binding Title}"
+                                       TextColor="#002333"
+                                       FontSize="Subtitle"
+                                       FontAttributes="Bold" />
+                            </Grid>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+
+</ContentPage>
